@@ -6,7 +6,7 @@ At the moment it provides:
 - ***jlab_connector*** -> start jupyter lab server on remote and forward it to local computer
 - ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them
 
-````
+```
        _ _       _                                       _             
       (_) | __ _| |__     ___ ___  _ __  _ __   ___  ___| |_ ___  _ __ 
       | | |/ _` | '_ \   / __/ _ \| '_ \| '_ \ / _ \/ __| __/ _ \| '__|
@@ -23,6 +23,7 @@ At the moment it provides:
     A tmux session running a jupyter lab server at the required port is started, 
     the port forward to the local computer and jupyter lab opened in the
     browser
+```
 
 ## installation
 To install the package:
