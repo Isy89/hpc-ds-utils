@@ -17,6 +17,18 @@
     the port forward to the local computer and jupyter lab opened in the
     browser
 
+## installation
+To install the package:
+
+```bash
+git clone https://github.com/Isy89/hpc-ds-utils.git && cd hpc-ds-utils
+python -m build
+pip install dist/hpc_ds_utils-0.0.0-py3-none-any.whl
+```
+
+after installing the package the command ***jpc*** will be available on the command line
+supported OS: mac, linux ( windows maybe in the feature )
+
 ## Usage
 ***main script usage***
 
