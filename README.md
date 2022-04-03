@@ -33,14 +33,15 @@ supported OS: mac, linux ( windows maybe in the feature )
 ## Usage
 ***main script usage***
 
-    usage: jpc [-h] {kill_remote_tmux_session,check_tmux_session_up,check_remote_port_in_use,check_local_port_in_use,check_server_up,jp_start} ...
-    
+```bash
+usage: jpc [-h] {kill_remote_tmux_session,check_tmux_session_up,check_remote_port_in_use,check_local_port_in_use,check_server_up,jp_start} ...
+```  
 
 The package provides the command jpc which is an interface to different sub commands. The principle one is the jpc jp_start
 
 ***jp_start*** -> main function starting the server, forwarding the port and opening jupyter lab in the web-browser
 
-```
+```bash
 usage: jpc jp_start [-h] [--target TARGET] [--conda_env CONDA_ENV] [--tmux_session_name TMUX_SESSION_NAME] [--p_local P_LOCAL] [--p_remote P_REMOTE]
 
 optional arguments:
@@ -59,7 +60,8 @@ The jpc script apart from the jp_start contains the following set of subcommands
 may be usefull to start and forward the rmeote jupyter lab server:
 
 - ***check_tmux_session_up*** -> checks that a specific tmux session is already running 
-```
+```bash
+
 usage: jpc check_tmux_session_up [-h] [--target TARGET] [--tmux_session_name TMUX_SESSION_NAME]
 
 optional arguments:
@@ -69,7 +71,7 @@ optional arguments:
                         name of the tmux session to be attached
 ```
 - ***kill_remote_tmux_session*** -> kills the provided tmux session in the remote server
-```
+```bash
 usage: jpc kill_remote_tmux_session [-h] [--target TARGET] [--tmux_session_name TMUX_SESSION_NAME]
 
 optional arguments:
@@ -79,7 +81,8 @@ optional arguments:
                         name of the tmux session to be attached
 ```
 - ***check_remote_port_in_use*** -> check whether the provided port is already in used in the remote server
-```
+```bash
+
 usage: jpc check_remote_port_in_use [-h] [--target TARGET] [--p_remote P_REMOTE]
 
 optional arguments:
@@ -89,7 +92,8 @@ optional arguments:
 
 ```
 - ***check_local_port_in_use*** -> checks whether the provided port is already in used in the local machine
-```
+```bash
+
 usage: jpc check_local_port_in_use [-h] [--p_local P_LOCAL]
 
 optional arguments:
@@ -97,7 +101,8 @@ optional arguments:
   --p_local P_LOCAL  port of the remote server where the jupyter server is running
 ```
 - ***check_server_up*** -> check wether a jupyter server is already running at the specific port
-```
+```bash
+
 usage: jpc check_server_up [-h] [--target TARGET] [--p_remote P_REMOTE] [--conda_env CONDA_ENV]
 
 optional arguments:
