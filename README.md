@@ -26,7 +26,8 @@ python -m build
 pip install dist/hpc_ds_utils-0.0.0-py3-none-any.whl
 ```
 
-after installing the package the command ***jpc*** will be available on the command line
+after installing the package the command ***jpc*** will be available on the command line.
+
 supported OS: mac, linux ( windows maybe in the feature )
 
 ## Usage
@@ -59,7 +60,7 @@ may be usefull to start and forward the rmeote jupyter lab server:
 
 - ***check_tmux_session_up*** -> checks that a specific tmux session is already running 
 ```
-usage: jpc kill_remote_tmux_session [-h] [--target TARGET] [--tmux_session_name TMUX_SESSION_NAME]
+usage: jpc check_tmux_session_up [-h] [--target TARGET] [--tmux_session_name TMUX_SESSION_NAME]
 
 optional arguments:
   -h, --help            show this help message and exit
