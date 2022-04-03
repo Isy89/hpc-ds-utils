@@ -1,5 +1,12 @@
 # hpc-ds-utils
+Package providing tools to make life easier for people working in a HPC
+cluster running slurm.
+At the moment it provides:
 
+- ***jlab_connector*** -> start jupyter lab server on remote and forward it to local computer
+- ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them for provided commands
+
+````
        _ _       _                                       _             
       (_) | __ _| |__     ___ ___  _ __  _ __   ___  ___| |_ ___  _ __ 
       | | |/ _` | '_ \   / __/ _ \| '_ \| '_ \ / _ \/ __| __/ _ \| '__|
