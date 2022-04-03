@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+addopts = """
+--cov-report term-missing \
+--cov src/bioinfo_pipelines -ra"""
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
