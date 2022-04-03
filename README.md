@@ -4,7 +4,7 @@ cluster running slurm.
 At the moment it provides:
 
 - ***jlab_connector*** -> start jupyter lab server on remote and forward it to local computer
-- ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them for provided commands
+- ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them
 
 ````
        _ _       _                                       _             
