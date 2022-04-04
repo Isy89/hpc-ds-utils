@@ -12,7 +12,7 @@ with open("requirements.txt", "r", encoding="utf-8") as f:
         requires.append(req)
 
 setup(
-    name="hpc_dis_utils",
+    name="hpc_ds_utils",
     version="0.1",
     author="Isaac Lazzeri",
     description="A set of tools to make life of researcher using hpc easier",
