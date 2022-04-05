@@ -1,7 +1,7 @@
 [tool.pytest.ini_options]
 addopts = """
 --cov-report term-missing \
---cov src/bioinfo_pipelines -ra"""
+--cov src/hpc_ds_utils -ra"""
 
 
 [build-system]
