@@ -21,6 +21,7 @@ sbatch_manager.get_executed_commands()
 sbatch_manager.print_executed_commands()
 
 ```
+⚠️ output and job_name needs to be provided to the SbatchJobExecutionManager
 
 ```
        _ _       _                                       _             
