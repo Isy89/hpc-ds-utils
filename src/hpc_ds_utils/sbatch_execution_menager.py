@@ -130,6 +130,26 @@ class SbatchJobExecutionManager:
                  dry_run: bool = True,
                  path_to_registry: str = None,
                  wait: bool = False) -> None:
+        """
+        method to initialize the SbatchJobExecutionManager
+        Args:
+            conda_env (str): string defining the name of the conda env to be activated
+            job_name (str): string defining the name of the job to be executed in slurm
+            user (str): string defining the name of the user
+            nodes (str): nodes to be used to run the slurm jobs
+            nodes_to_be_excluded (str): string defining the nodes to be excluded
+            ntasks (int): numer defining the number of tasks
+            cpus_per_task (int): numer defining the cpus per tasks
+            mem (str): string defining the amount of memory allocated for the executed commands
+            time (int): time limit
+            output (str): string defining the where to store the slurm output
+            dry_run (bool): if true only the sbatch scripts to be fed to sbatch command will be
+                            plot
+            path_to_registry (str): path to the place where the list of executed commands will be saved
+            wait (bool): if true the command blocks the program execution till the slurm jobs has
+                         finished
+        """
+
         self.conda_env = conda_env
         self.job_name = job_name
         self.user = user
@@ -191,7 +211,7 @@ class SbatchJobExecutionManager:
                         raise
         return
 
-    def _generate_sbatch_scripts(self, command: str):
+    def _generate_sbatch_scripts(self, command: str) -> str:
         """
         function to generate the sbatch scripts per job to be executed
         Args:
