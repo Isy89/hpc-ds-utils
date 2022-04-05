@@ -141,9 +141,10 @@ def check_running_server(target: str, conda_env: str, remote_port: int) -> bool:
 
 def check_exists_bash_conda_file(target: str) -> bool:
     """
-    function the presence on the remote system in the home directory whether the .bash_conda file is present.
-    bash_conda file contains the conda initialization which is generally present in the bashrc file. In this case
-    the bash_conda is generated if it is not present and filled with the conda initialization code present in the bashrc
+    function to check the presence on the remote system in the home directory whether the .bash_conda file is present.
+    bash_conda file contains the conda initialization, which is generally present in the bashrc file. If the bash_conda
+    file is not present, but the conda initialization code s present in the bashrc, the bash_coda file is generated and 
+    the conda initialization code present in the bashrc is copied to it.
     This is done to allow sourcing of the file containing the conda initializing code. Bashrc cannot be sourced in non
     interactive mode.
 
@@ -243,7 +244,7 @@ def kill_tmux_session(target: str, tmux_session_name) -> None:
 
 def check_if_jp_server_is_running(target: str, p_remote: int, conda_env: str) -> bool:
     """
-    function to check that a jupyter server is running on a remote server. Bash_conda file is created if is note in the
+    function to check that a jupyter server is running on a remote server. Bash_conda file is created if is not in the
     remote dir and filled with the conda initializing code present in the bashrc.
 
     Args:
@@ -321,7 +322,7 @@ def check_port_in_use_local(p_local: int) -> bool:
 
 def tunnel_jupyter_ports(target: str, p_local: int, p_remote: int, conda_env: str):
     """
-    function to tunnel a remote jupyter running session from the remote to the local
+    function to tunnel a remote jupyter running session from the remote to the local machine
     Args:
         target: remote server address
         p_local: local port where the jupyter session should be forwarded
