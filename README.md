@@ -55,9 +55,12 @@ after installing the package the command ***jpc*** will be available on the comm
 supported OS: mac, linux ( windows maybe in the feature )
 
 ## Usage
-⚠️ It would be better to access to the remote with a ssh key otherwise a password is asked
-   for each time the program is accessing the remote server.
-   ```
+⚠️ 
+
+   It would be better to access to the remote server with a ssh key otherwise a password is 
+   asked for each time the program is accessing the remote server.
+   
+   ``` bash
    ssh-keygen -t rsa
    ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
    eval "$(ssh-agent -s)"
