@@ -357,8 +357,8 @@ def tunnel_jupyter_ports(target: str, p_local: int, p_remote: int, conda_env: st
 
 def jp_start_func(target: str, p_local: int, p_remote: int, tmux_session_name: str, conda_env: str) -> None:
     """
-    function to start a jupyter lab server in a tmux session in a remote server and forward the port to the local machine
-    and open the jupyter lab session in the web-browser
+    function to start a jupyter lab server in a tmux session in a remote server and forward the port to the local
+    machine and open the jupyter lab session in the web-browser
     Args:
         target: remote server address
         p_local: port where the jupyter lab session will be  forwarded
