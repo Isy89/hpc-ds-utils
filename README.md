@@ -4,8 +4,8 @@ cluster running slurm.
 At the moment it provides:
 
 - ***jlab_connector*** -> start jupyter lab server on remote and forward it to local computer
-- ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them it allows
-  to store executed comands and load them back and reexecute them.
+- ***SbatchJobExecutionManager*** class to generate sbatch scripts and execute them. It allows
+  to store executed comands and load them back and reexecute them all.
   
 ```python
 from hpc_ds_utils import SbatchJobExecutionManager
