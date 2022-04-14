@@ -127,7 +127,7 @@ def check_running_server(target: str, conda_env: str, remote_port: int) -> bool:
     """
     check_running_server_cmd = ssh_minus_tt(f"source .bash_conda; conda activate {conda_env}; jupyter server list",
                                             target)
-
+    print(check_running_server_cmd)
     res_cmd = run_command(check_running_server_cmd)
     log.info(get_stdout_by_line_from_cmd_results(res_cmd))
     status = (
@@ -222,8 +222,7 @@ def check_tmux_session_running(target: str, tmux_session_name) -> bool:
         )
         res_cmd = run_command(check_tmux_session_running_cmd)
     except subprocess.CalledProcessError:
-        log.info("no session with this name is running")
-        return False
+        pass
     status = (True if len([i for i in get_stdout_by_line_from_cmd_results(res_cmd) if tmux_session_name in i]) > 0
               else False)
     log.info("session is running" if status else "no session with this name is running")
@@ -294,7 +293,7 @@ def check_port_in_use_remote(target: str, p_remote: int) -> bool:
         if len(get_stdout_by_line_from_cmd_results(res_cmd)) > 0:
             status = True
     except subprocess.CalledProcessError:
-        return False
+        pass
     log.info(f"port {p_remote} is already in used" if status else f"port {p_remote} is not in used")
     return status
 
@@ -315,7 +314,7 @@ def check_port_in_use_local(p_local: int) -> bool:
         if len(get_stdout_by_line_from_cmd_results(res_cmd)) > 0:
             status = True
     except subprocess.CalledProcessError:
-        return False
+        pass
     log.info(f"port {p_local} is already in used" if status else f"port {p_local} is not in used")
     return status
 
@@ -388,10 +387,7 @@ def jp_start_func(target: str, p_local: int, p_remote: int, tmux_session_name: s
     webbrowser.open_new_tab(f'http://localhost:{p_local}')
     return
 
-
-def main_func():
-    """main function of the script and one of the entry points of the package.It parses the arguments provided and run
-    the specified command."""
+def get_parser():
     main_parser = argparse.ArgumentParser(description=DESCRIPTION,
                                           formatter_class=argparse.RawDescriptionHelpFormatter)
     sub_parser = main_parser.add_subparsers()
@@ -450,7 +446,14 @@ def main_func():
     jp_start.set_defaults(
         func=jp_start_func
     )
+    return main_parser
 
+
+def main_func():
+    """main function of the script and one of the entry points of the package.It parses the arguments provided and run
+    the specified command."""
+
+    main_parser = get_parser()
     args = main_parser.parse_args()
     variables = vars(args)
 
