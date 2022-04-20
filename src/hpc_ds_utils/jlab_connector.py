@@ -222,7 +222,8 @@ def check_tmux_session_running(target: str, tmux_session_name) -> bool:
         )
         res_cmd = run_command(check_tmux_session_running_cmd)
     except subprocess.CalledProcessError:
-        pass
+        log.info(check_tmux_session_running_cmd)
+        return False
     status = (True if len([i for i in get_stdout_by_line_from_cmd_results(res_cmd) if tmux_session_name in i]) > 0
               else False)
     log.info("session is running" if status else "no session with this name is running")
